@@ -1,0 +1,959 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #a1c4fd, #c2e9fb, #d4b5ff);
+    min-height: 100vh;
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* Login Page Styles */
+.login-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    position: relative;
+    z-index: 10;
+}
+
+.sun {
+    position: absolute;
+    top: 50px;
+    right: 50px;
+    width: 100px;
+    height: 100px;
+    font-size: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: sun-move 15s infinite alternate;
+}
+
+@keyframes sun-move {
+    0% { transform: translate(0, 0) rotate(0deg); }
+    100% { transform: translate(-30px, 30px) rotate(30deg); }
+}
+
+.login-card {
+    background: rgba(255, 255, 255, 0.85);
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 400px;
+    text-align: center;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    z-index: 5;
+}
+
+.login-title {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    background: linear-gradient(45deg, #a1c4fd, #d4b5ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.login-subtitle {
+    color: #1ba49f;
+    margin-bottom: 30px;
+    font-size: 1.2rem;
+    font-family: cursive;
+    font-weight: 800;
+}
+
+.input-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #444;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 15px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    font-size: 1rem;
+    transition: all 0.3s;
+}
+
+.input-group input:focus {
+    border-color: #a1c4fd;
+    box-shadow: 0 0 0 3px rgba(161, 196, 253, 0.2);
+    outline: none;
+}
+
+.login-btn {
+    background: linear-gradient(45deg, #a1c4fd, #d4b5ff);
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 30px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    width: 100%;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.login-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Animated photos in login page */
+.animated-photos {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.photo-animation {
+    position: absolute;
+    border-radius: 50%;
+    border: 3px solid white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.photo-top-left {
+    top: 50px;
+    left: 50px;
+    width: 80px;
+    height: 80px;
+    animation: float-top-left 8s infinite ease-in-out;
+}
+
+.photo-top-right {
+    top: 120px;
+    right: 240px;
+    width: 90px;
+    height: 90px; 
+    animation: float-top-right 10s infinite ease-in-out;
+}
+
+.photo-bottom {
+    top: 200px;
+    left: 25%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 100px;
+    animation: float-bottom 12s infinite ease-in-out;
+}
+
+.photo-top-left1 {
+    bottom: 80px;
+    left: 15%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 100px;
+    animation: float-bottom 12s infinite ease-in-out;
+}
+
+.photo-right-left2 {
+    bottom: 160px;
+    right: 10%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 100px;
+    animation: float-bottom 12s infinite ease-in-out;
+}
+
+@keyframes float-top-left {
+    0%, 100% { transform: translate(0, 0) rotate(0deg); }
+    50% { transform: translate(20px, -20px) rotate(10deg); }
+}
+
+@keyframes float-top-right {
+    0%, 100% { transform: translate(0, 0) rotate(0deg); }
+    50% { transform: translate(-20px, 20px) rotate(-10deg); }
+}
+
+@keyframes float-bottom {
+    0%, 100% { transform: translateX(-50%) translateY(0) rotate(0deg); }
+    50% { transform: translateX(-50%) translateY(-30px) rotate(15deg); }
+} 
+
+/* Main App Styles*/ 
+.app-container {
+    display: none;
+    min-height: 100vh;
+    position: relative;
+}
+
+.header {
+    background: rgba(255, 255, 255, 0);
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    backdrop-filter: blur(10px);
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: 700;
+    background: #f0f0f0;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.nav-links {
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: 600;
+    padding: 8px 15px;
+    border-radius: 20px;
+    transition: all 0.3s;
+}
+
+.nav-links a:hover, .nav-links a.active {
+    background: linear-gradient(45deg, #a1c4fd, #d4b5ff);
+    color: white;
+}
+
+.music-control {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.music-btn {
+    background: linear-gradient(45deg, #a1c4fd, #d4b5ff);
+    color: white;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+}
+
+.main-content {
+    padding: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section {
+    display: none;
+    animation: fadeIn 0.5s;
+}
+
+.section.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Home Section */
+.home-section {
+    text-align: center;
+    position: static;
+}
+
+.home-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    opacity: 0.;
+    object-fit: cover;
+}
+
+.birthday-banner {
+    /*background: linear-gradient(45deg, #a5bbde, #8f69c3);*/
+    border-radius: 20px;
+    padding: 30px;
+    margin-bottom: 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 1;
+}
+
+.banner-content {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.banner-heading {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 15px;
+    padding: 15px 20px;
+    backdrop-filter: blur(5px);
+    transition: all 0.3s ease;
+}
+
+.banner-heading:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: translateY(-3px);
+}
+
+.banner-paragraph {
+    background: rgba(0, 0, 0, 0.15);
+    border-radius: 15px;
+    padding: 15px 20px;
+    backdrop-filter: blur(5px);
+    transition: all 0.3s ease;
+}
+
+.banner-paragraph:hover {
+    background: rgba(0, 0, 0, 0.25);
+    transform: translateY(-3px);
+}
+
+.birthday-name {
+    font-size: 3rem;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    color: #ffffff;
+    opacity: 0.95;
+    transition: all 0.3s ease;
+}
+
+
+.birthday-wish {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    color: #f0f0f0;
+    opacity: 0.9;
+    transition: all 0.3s ease;
+}
+
+
+.birthday-name {
+    font-size: 3rem;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px #ee5388;
+}
+
+.birthday-wish {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+.countdown-container {
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 15px;
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 600px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 1;
+}
+
+.countdown-title {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: #444;
+}
+
+.countdown {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.countdown-item {
+    background: linear-gradient(45deg, #a1c4fd, #d4b5ff);
+    color: white;
+    border-radius: 10px;
+    padding: 15px;
+    min-width: 80px;
+    text-align: center;
+}
+
+.countdown-value {
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.countdown-label {
+    font-size: 0.9rem;
+    margin-top: 5px;
+}
+
+.bash-button {
+    background: linear-gradient(45deg, #a1c4fd, #d4b5ff);
+    color: white;
+    border: none;
+    padding: 20px 40px;
+    border-radius: 50px;
+    font-size: 1.5rem;
+    font-weight: 700;
+    cursor: pointer;
+    margin: 30px auto;
+    display: block;
+    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    position: relative;
+    z-index: 1;
+}
+
+
+.bash-button:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+}
+
+.finger-button {
+    background: linear-gradient(45deg, #a1c4fd93, #d4b5ff00);
+    color: white;
+    border: none;
+    padding: 20px 40px;
+    border-radius: 50px;
+    font-size: 1.5rem;
+    font-weight: 700;
+    cursor: pointer;
+    margin: 30px auto;
+    display: block;
+    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    position: relative;
+    z-index: 1;
+}
+
+
+.finger-button:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+}
+
+
+
+.share-section {
+    margin-top: 30px;
+    position: relative;
+    z-index: 1;
+}
+
+
+/* Messages Section */
+.message-form {
+    background: white;
+    border-radius: 15px;
+    padding: 25px;
+    margin-bottom: 30px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.message-form h2 {
+    margin-bottom: 20px;
+    color: #444;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #444;
+}
+
+.form-group input, .form-group textarea {
+    width: 100%;
+    padding: 15px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    font-size: 1rem;
+    transition: all 0.3s;
+}
+
+.form-group input:focus, .form-group textarea:focus {
+    border-color: #a1c4fd;
+    box-shadow: 0 0 0 3px rgba(161, 196, 253, 0.2);
+    outline: none;
+}
+
+.submit-btn {
+    background: linear-gradient(45deg, #a1c4fd, #d4b5ff);
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 30px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.submit-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.messages-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.message-card {
+    background: white;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.message-card:hover {
+    transform: translateY(-5px);
+}
+
+.message-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.message-sender {
+    font-weight: 700;
+    color: #a1c4fd;
+}
+
+.message-date {
+    color: #888;
+    font-size: 0.9rem;
+}
+
+.message-content {
+    color: #444;
+    line-height: 1.6;
+}
+
+/* Wishing Note with Paper Design and Flower Bouquet */
+.wishing-note {
+    background: #f9f7f0;
+    border-radius: 5px;
+    padding: 30px;
+    margin: 30px auto;
+    max-width: 600px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    position: relative;
+    transform: rotate(-1deg);
+}
+
+.wishing-note:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, transparent 48%, #f0f0f0 48%, #f0f0f0 52%, transparent 52%);
+    background-size: 20px 20px;
+    border-radius: 5px;
+    z-index: -1;
+}
+
+.wishing-note:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, transparent 49%, #e0e0e0 49%, #e0e0e0 51%, transparent 51%);
+    background-size: 20px 20px;
+    border-radius: 5px;
+    z-index: -1;
+}
+
+.flower-bouquet {
+    position: absolute;
+    bottom: -20px;
+    right: -80px;
+    width: 220px;
+    height: 220px;
+    z-index: 1;
+}
+
+.flower {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    opacity: 0.8;
+}
+
+.flower img {
+    position: absolute;
+  width: 200px;   /* set width */
+  height: auto;   /* keeps aspect ratio */
+  border-radius: 10px; /* optional: rounded corners */
+  bottom: 30px;
+}
+
+.flower1 {
+    background: radial-gradient(circle, #FF9AA2, #FFB7B2);
+    bottom: 20px;
+    right: 40px;
+    transform: rotate(15deg);
+}
+
+
+.wishing-note-text {
+    font-size: 1.2rem;
+    color: #444;
+    line-height: 1.8;
+    font-style: italic;
+    position: relative;
+    z-index: 1;
+}
+
+.wishing-note-signature {
+    text-align: right;
+    margin-top: 20px;
+    font-weight: 600;
+    color: #00c2df;
+    font-size: 22px;
+}
+
+/* Timeline Section */
+.timeline-container {
+    position: relative;
+    margin: 30px 0;
+}
+
+.timeline-line {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background: linear-gradient(to bottom, #a1c4fd, #d4b5ff);
+    transform: translateX(-50%);
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 50px;
+    width: 50%;
+}
+
+.timeline-item:nth-child(odd) {
+    left: 0;
+    padding-right: 30px;
+    text-align: right;
+}
+
+.timeline-item:nth-child(even) {
+    left: 50%;
+    padding-left: 30px;
+}
+
+.timeline-dot {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: white;
+    border: 4px solid #a1c4fd;
+    top: 10px;
+}
+
+.timeline-item:nth-child(odd) .timeline-dot {
+    right: -10px;
+}
+
+.timeline-item:nth-child(even) .timeline-dot {
+    left: -10px;
+}
+
+.timeline-content {
+    background: white;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.timeline-photo {
+    width: 100%;
+    /*height: 200px;*/
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.timeline-date {
+    font-weight: 600;
+    color: #a1c4fd;
+    margin-bottom: 10px;
+}
+
+.timeline-note {
+    color: #444;
+    line-height: 1.6;
+}
+
+/* Surprise Section */
+.surprise-container {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.question-card {
+    background: white;
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+}
+
+.question-title {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #444;
+}
+
+.question-text {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+    color: #666;
+}
+
+.answer-input {
+    width: 100%;
+    padding: 15px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.answer-btn {
+    background: linear-gradient(45deg, #a1c4fd, #d4b5ff);
+    color: white;
+    border: none;
+    padding: 15px 40px;
+    border-radius: 30px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.answer-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.video-container {
+    display: none;
+    background: white;
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+}
+
+.video-container video {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.success-message {
+    display: none;
+    background: linear-gradient(45deg, #4CAF50, #8BC34A);
+    color: white;
+    padding: 15px;
+    border-radius: 10px;
+    margin-top: 20px;
+    font-size: 1.2rem;
+}
+
+.wrong-answer-message {
+    display: none;
+    background: linear-gradient(45deg, #ff6b6b, #ff8e8e);
+    color: white;
+    padding: 15px;
+    border-radius: 10px;
+    margin-top: 20px;
+    font-size: 1.2rem;
+}
+
+/* Birthday Bash Animation */
+.bash-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 1000;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.countdown-display {
+    font-size: 10rem;
+    font-weight: 700;
+    color: white;
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+}
+
+.birthday-message {
+    font-size: 5rem;
+    font-weight: 700;
+    background: linear-gradient(45deg, #a1c4fd, #d4b5ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 30px rgba(255, 255, 255, 0.5);
+    display: none;
+    animation: pulse 1s infinite alternate;
+}
+
+@keyframes pulse {
+    from { transform: scale(1); }
+    to { transform: scale(1.1); }
+}
+
+/* Animations for birthday bash */
+.balloon {
+    position: absolute;
+    width: 80px;
+    height: 100px;
+    border-radius: 50%;
+    opacity: 0.8;
+    animation: float-up 5s forwards;
+}
+
+.balloon::before {
+    content: '';
+    position: absolute;
+    width: 2px;
+    height: 100px;
+    background: rgba(0, 0, 0, 0.1);
+    left: 50%;
+    top: 100%;
+    transform: translateX(-50%);
+}
+
+@keyframes float-random {
+    0% { transform: translate(0, 0) rotate(0deg); }
+    100% { 
+        transform: translate(var(--dx), var(--dy)) rotate(360deg); 
+        opacity: 0; /* fade out */
+    }
+}
+
+.confetti {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    opacity: 0.8;
+    animation: confetti-fall 3s forwards;
+}
+
+@keyframes confetti-fall {
+    0% { transform: translateY(0) rotate(0deg); }
+    100% { transform: translateY(100vh) rotate(360deg); }
+}
+
+.party-popper {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    opacity: 0.8;
+    animation: popper-burst 1s forwards;
+}
+
+@keyframes popper-burst {
+    0% { transform: scale(0); opacity: 0; }
+    50% { transform: scale(1.5); opacity: 1; }
+    100% { transform: scale(0.5); opacity: 0; }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        padding: 15px;
+    }
+
+    .nav-links {
+        margin-top: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .birthday-name {
+        font-size: 2rem;
+    }
+
+    .countdown {
+        flex-wrap: wrap;
+    }
+
+    .timeline-line {
+        left: 20px;
+    }
+
+    .timeline-item {
+        width: 100%;
+        left: 0 !important;
+        padding-left: 50px !important;
+        padding-right: 0 !important;
+        text-align: left !important;
+    }
+
+    .timeline-dot {
+        left: 10px !important;
+        right: auto !important;
+    }
+
+    .countdown-display {
+        font-size: 6rem;
+    }
+
+    .birthday-message {
+        font-size: 3rem;
+    }
+
+    .wishing-note {
+        transform: rotate(0deg);
+    }
+}

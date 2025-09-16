@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Birthday Wish Website</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Login Page -->
+    <div class="login-container" id="loginPage">
+        <div class="sun">☀️</div>
+        
+        <div class="animated-photos">
+            <img src="Extra/mmexport1745152293887.jpg" alt="Photo" class="photo-animation photo-top-left">
+            <img src="Extra/IMG-20190720-WA0000-01.jpg" alt="Photo" class="photo-animation photo-top-right">
+            <img src="Extra/received_2387687514846677.jpg" alt="Photo" class="photo-animation photo-bottom">
+            <img src="Extra/mmexport1713020517583.jpg" alt="Photo" class="photo-animation photo-top-left1">
+            <img src="Extra/mmexport1746188404793.jpg" alt="Photo" class="photo-animation photo-right-left2">
+        </div>
+        
+        <div class="login-card">
+            <h1 class="login-title">Happy Birthday</h1>
+            <p class="login-subtitle">Create magical birthday memories</p>
+            
+            <form id="loginForm">
+                <div class="input-group">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" placeholder="Enter your username" required>
+                </div>
+                <div class="input-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" placeholder="Enter your password" required>
+                </div>
+                <button type="submit" class="login-btn">Login</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Main App -->
+    <div class="app-container" id="appContainer">
+        <header class="header">
+            <div class="logo">17 September</div>
+            <nav class="nav-links">
+                <a href="#" class="nav-link active" data-section="home">Home</a>
+                <a href="#" class="nav-link" data-section="messages">Messages</a>
+                <a href="#" class="nav-link" data-section="timeline">Timeline</a>
+                <a href="#" class="nav-link" data-section="surprise">Surprise</a>
+            </nav>
+            <div class="music-control">
+                <button class="music-btn" id="musicToggle">
+                    <i class="fas fa-music"></i>
+                </button>
+                <button class="music-btn" id="logoutBtn">
+                    <i class="fas fa-sign-out-alt"></i>
+                </button>
+            </div>
+        </header>
+
+        <main class="main-content">
+            <!-- Home Section -->
+            <section class="section active" id="home">
+                <div class="home-section">
+                    <img src="Extra/birthday-01.png" alt="Birthday Background" class="home-background">
+                    
+                    <div class="birthday-banner">
+                        <div class="banner-content">
+                            <div class="banner-heading">
+                                <h1 class="birthday-name">Happy Birthday, Tahsin Akter Shornaly!</h1>
+                            </div>
+                            <div class="banner-paragraph">
+                                <p class="birthday-wish">Wishing you a day filled with happiness and a year filled with joy!</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <button class="bash-button" id="bashButton">Have a Birthday Bash!</button>
+                    <button class="finger-button" id="fingerButton">Click Here 👆</button>
+                    
+                    <div class="countdown-container">
+                        <h2 class="countdown-title">Countdown to Cake Cutting</h2>
+                        <div class="countdown" id="countdown">
+                            <div class="countdown-item">
+                                <div class="countdown-value" id="days">00</div>
+                                <div class="countdown-label">Days</div>
+                            </div>
+                            <div class="countdown-item">
+                                <div class="countdown-value" id="hours">00</div>
+                                <div class="countdown-label">Hours</div>
+                            </div>
+                            <div class="countdown-item">
+                                <div class="countdown-value" id="minutes">00</div>
+                                <div class="countdown-label">Minutes</div>
+                            </div>
+                            <div class="countdown-item">
+                                <div class="countdown-value" id="seconds">00</div>
+                                <div class="countdown-label">Seconds</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </section>
+
+            <!-- Messages Section -->
+            <section class="section" id="messages">
+                <div class="wishing-note">
+                    <div class="flower-bouquet">
+                        <div class="flower flower1">
+                            <img src="Extra/ภาพสุขสันต์วันเกิดให้คุณ มีสีสัน ตัวอักษร เค้ก Png ภาพโปร่งใส,เทมเพลต แบบ PSD ดาวน์โหลดฟรี - Pikbest.jpg">
+                        </div>
+                        
+                    </div>
+                    <p class="wishing-note-text">
+                        প্রিয় স্বর্ণালী,<br><br>
+
+                        ভেঙ্গে যাওয়া গল্পের ভীড়ে মন জুড়ে যাওয়া গল্প হোক,<br>
+                        তোমার যত রাগ অভিমান সব ভুলে তাই অল্প হোক।<br>
+                        কথা দেয়ার এই মিছিলে সত্যিটা আজ যুক্ত হোক,<br>
+                        তোমার সাথে বিচ্ছেদ নয় আটকে থাকুক মায়ার ঝোঁক।<br>
+                        সবাই নাকি কল্পনাতে সুখি তুমি আমার সত্যি হও,<br>
+                        তোমায় ছুঁয়ে কল্পনা ভুলে বাস্তবতা রুপগল্প হোক।<br>
+
+
+                    </p>
+                    <p class="wishing-note-signature">শুভ জন্মদিন!</p>
+                </div>
+                
+                <!--
+                <div class="message-form">
+                    <h2>Add a Birthday Message</h2>
+                    <form id="messageForm">
+                        <div class="form-group">
+                            <label for="senderName">Your Name</label>
+                            <input type="text" id="senderName" placeholder="Enter your name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="messageText">Your Message</label>
+                            <textarea id="messageText" rows="4" placeholder="Write your birthday message here..." required></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn">Add Message</button>
+                    </form>
+                </div>-->
+                
+                <div class="messages-container" id="messagesContainer">
+                    <!-- Messages will be dynamically added here -->
+                </div>
+            </section>
+
+            <!-- Timeline Section -->
+            <section class="section" id="timeline">
+                <h2 style="text-align: center; margin-bottom: 30px; color: #444;">Memorable Timeline</h2>
+                
+                <div class="timeline-container">
+                    <div class="timeline-line"></div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <img src="Extra/1758005335317.jpg" alt="Memory" class="timeline-photo">
+                            <div class="timeline-date">Sept 17, 2001</div>
+                            <div class="timeline-note"> A small potato entered the world to rule a 5.11" guy like me</div>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <img src="Extra/IMG_20190314_190842.jpg" alt="Memory" class="timeline-photo">
+                            <div class="timeline-date">june 2, 2018</div>
+                            <div class="timeline-note"> Suddenly she raised up and timely meet with me, which was obviously amazing!</div>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <img src="Extra/SAVE_20190512_141411.jpg" alt="Memory" class="timeline-photo">
+                            <div class="timeline-date">october 18, 2018</div>
+                            <div class="timeline-note">The finger that was tightly crossed alhamdulillah still they have the same attraction for touch!!!</div>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <img src="Extra/IMG_20250721_171822.jpg" alt="Memory" class="timeline-photo">
+                            <div class="timeline-date">July 21, 2025</div>
+                            <div class="timeline-note">Alhamdulillah For everything...</div>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <img src="Extra/mmexport1733845471657.jpg" alt="Memory" class="timeline-photo">
+                            <div class="timeline-date">Happy Birthday</div>
+                            <div class="timeline-note">Blussshiiiinngggg!!! The reason is always me 😌🩷...
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Surprise Section -->
+            <section class="section" id="surprise">
+                <div class="surprise-container">
+                    <div class="question-card">
+                        <h2 class="question-title">Special Question</h2>
+                        <p class="question-text">what i am to you?</p>
+                        <input type="text" class="answer-input" id="answerInput" placeholder="Your answer...">
+                        <button class="answer-btn" id="submitAnswer">Submit Answer</button>
+                        <div class="success-message" id="successMessage">
+                            Correct! Here's your surprise video!
+                        </div>
+                        <div class="wrong-answer-message" id="wrongAnswerMessage">
+                            Wrong answer! Please try again.
+                        </div>
+                    </div>
+                    
+                    <div class="video-preview" id="videoContainer" style="text-align:center; margin:20px 0; display:none;">
+                        <!-- Video Preview -->
+                        <iframe 
+                            src="https://drive.google.com/file/d/1VMnqhCPs0-pkU2f6QO0hSjpYvmEX8J9g/preview" 
+                            width="640" 
+                            height="360" 
+                            allow="autoplay; encrypted-media">
+                        </iframe>
+
+                        <!-- Download Link -->
+                        <p style="margin-top:10px;">
+                            <a href="https://drive.google.com/uc?export=download&id=1VMnqhCPs0-pkU2f6QO0hSjpYvmEX8J9g" 
+                                target="_blank" 
+                                rel="noopener" 
+                                download
+                                style="font-size:16px; color:#ffffff; background:#007BFF; padding:10px 15px; text-decoration:none; border-radius:5px;">
+                                Download Birthday Video
+                            </a>
+                        </p>
+                    </div>
+
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Birthday Bash Overlay -->
+    <div class="bash-overlay" id="bashOverlay">
+        <div class="countdown-display" id="countdownDisplay">5</div>
+        <div class="birthday-message" id="birthdayMessage">Happy Birthday!</div>
+    </div>
+
+    <!-- Background Music -->
+    <audio id="bgMusic" loop>
+        <source src="Extra/valobashiboledaw.m4a" type="audio/mpeg">
+    </audio>
+
+    <!-- Bash Music (plays only when Bash button is clicked) -->
+    <audio id="bashMusic">
+        <source src="Extra/birthday_song.m4a" type="audio/mpeg">
+    </audio>
+
+    <script src="script.js"></script>
+</body>
+</html>
